@@ -6,11 +6,9 @@ public class WeatherSystem : MonoBehaviour
 {
     public int DayNightCycleLength;
     public Light lightSource;
-    public Transform ParticleSystem, player;
 
     void Update()
     {
-
         // SUNLIGHT MNG
 
         transform.Rotate(360 * Time.deltaTime / DayNightCycleLength, 0, 0);
@@ -24,8 +22,5 @@ public class WeatherSystem : MonoBehaviour
             if (transform.rotation.eulerAngles.x >= 335)
                 lightSource.intensity = 0f;
         }
-
-        ParticleSystem.position = player.position;
-        ParticleSystem.Translate(0, 0, -20);
     }
 }
